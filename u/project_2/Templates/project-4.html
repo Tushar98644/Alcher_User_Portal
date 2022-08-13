@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        first page
+    </title>
+    <style>
+        .log {
+            
+            background: linear-gradient(#e66465, #9198e5);
+
+            width: 290px;
+            padding-left: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding-bottom: 10px;
+            padding-top: 30px;
+            box-shadow: 2px 2px 2px 2px rgba(52, 48, 48, 0.272);
+            height:150px
+        }
+        .userlog{
+            margin-left: 800px;
+            margin-top: 0px;
+            background-color: white;
+            width:310px;
+            padding-bottom: 60px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 2px 2px 2px 2px rgba(52, 48, 48, 0.272);
+
+        }
+        .input{
+
+            padding-left: 100px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 180px;
+        }
+        .password{
+            padding-left: 70px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 210px;
+        }
+        .login-main{
+            margin-left: 55px;
+            margin-top: 45px;
+        }
+        .login{
+            padding-left: 100px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-color: orangered;
+            width:140px;
+            margin-left: -10px;
+            
+        }
+        .alc{
+            width: 40px;
+            height:40px;
+            margin-top: -20px;
+            margin-left:10px;
+        }
+        .alcher {
+            margin-left: 60px;
+            padding-top: -20px;
+            font-size: 40px;
+            margin-top: -40px;
+        }
+        .alcheringa {
+            opacity: 0.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: grid;margin-top: 300px;margin-left: 180px;">
+
+        <div>
+            <img class="alc" src="{% static '3f89ce49-f9c8-4f4d-a65b-6c7a8f41c822.png' %}">
+                    </div>
+                    <div class="alcher">
+            
+                       <span class="alcheringa">Alcheringa</span>  <span style="color: rgb(255, 89, 0);">Connect</span>
+                    </div>
+        <div style="font-size: 20px; margin-top: 50px ;width: 320px; padding-left: 50px;opacity: 0.5;">
+            Alcheringa connect lets you associate with the people in your life
+        </div>
+
+    </div>
+    <div class="log" style="margin-left: 800px ;margin-top:-300px;">
+        <div >
+            <h1 style="margin-top: 60px;margin-left:80px;">
+                sign up 
+            </h1>
+        </div>
+        <div style="font-size: 15px;display: grid;grid-template-columns:215px 200px;padding-top: 10px;">
+            <div style="margin-left:-5px ;">
+                Already have an account?
+
+            </div>
+
+            <div style="font-size: 15px;margin-left: -20px;">
+                <a href="/" target="_blank"><u style="margin-left: 40px;">Login</u></a>
+            </div>
+        </div>
+       
+    </div>
+    <form  method="post">
+        {% csrf_token %}
+  
+        <div class="userlog">
+            <div style="font-size:25px;padding-top: 20px;padding-left: 30px;">
+                username
+            </div>
+            <div style="padding-left:20px ;padding-top:20px;width:150px;">
+                <input class="input" style="width:150px ;" name="username" type="text" placeholder="type here ">
+            </div>
+            <div style="font-size:22px;margin-top:20px;margin-left:30px">
+                Passsword
+            </div>
+            <div style="padding-left:20px ;padding-top:20px ;">
+                <input  class="password" name="password"  style="width:180px;" type="text" placeholder="enter the password here ">
+            </div>
+            <div class="login-main">
+                <button  type="submit" style="width: 250px;margin-left: -30px;height: 40px;background: linear-gradient(#00ff91, #9198e5);" >SIGN UP</button>
+            </div>
+    
+    
+        </div>
+    </form>
+   
+</body>
+
+</html>
