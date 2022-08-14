@@ -26,6 +26,6 @@ urlpatterns = [
     path('signup/', include('signup.urls')),
     path('project/', include('project_3.urls')),
     path('project/', include('webops2.urls')),
-   
+    
     
 ]

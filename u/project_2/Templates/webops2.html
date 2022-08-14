@@ -307,7 +307,7 @@
                     <div class="card">
                         <div class="card-title">
                             <img src=" {% static 'Screenshot 2022-08-06 at 10.55.48 AM.png' %}" alt="" class="profile-img">
-                            <h2 class="username">username</h2>
+                            <h2 class="username">{{user.username}}</h2>
                             <div><i class="fa-solid fa-bars"></i></div>
 
                         </div>
@@ -331,7 +331,7 @@
                     <div class="card">
                         <div class="card-title">
                             <img src=" {% static 'Screenshot 2022-08-06 at 10.55.48 AM.png' %}" alt="" class="profile-img">
-                            <h2 class="username">username</h2>
+                            <h2 class="username">{{user.username}}</h2>
                             <div><i class="fa-solid fa-bars"></i></div>
 
                         </div>
@@ -363,13 +363,18 @@
             </div>
         </div>
         <div class="userlog">
-            <div style="font-size:20px;padding-top: 20px;padding-left: 40px;margin-left: 70px;opacity: 0.6;">
-                Evil destroyer
+            <div style="font-size:20px;padding-top: 25px;padding-left: 40px;margin-left: 70px;opacity: 0.6;margin-bottom: -10px;">
+                <div style="margin-bottom: -25px;">
+               {{user.username}}
+                </div>
             </div>
-            <div style="margin-left: 110px;font-size: 20px;">
-                Tushar
+            <div >
+                <img style="width: 20px;margin-left: 90px;margin-bottom: -35px;" src="https://www.pngkey.com/png/detail/417-4174990_how-to-set-use-small-green-dot-icon.png">
             </div>
-            <div style="margin-top: -50px;margin-left: 20px;">
+            <div style="margin-left: 110px;font-size: 20px;opacity: 0.4;margin-top: 10px;">
+               Active
+            </div>
+            <div style="margin-top: -60px;margin-left: 20px;">
                 <img class="image-2" src="{% static 'Screenshot 2022-08-06 at 10.55.48 AM.png' %}">
             </div>
             <div style="margin-left:18px;margin-top: 60px;width: 310px;">
@@ -378,7 +383,7 @@
                 sed maximus rhoncus
             </div>
             <div style="margin-top: 70px;padding-left:90px;opacity: 0.6;font-size: 20px;">
-                <img class="image-4" src="{% static 'create.webp' %}"> <a href="/project">
+                <img class="image-4" src="{% static 'create.webp' %}"> <a  style="text-decoration: none"  href="/project">
                     My posts
                 </a>
             </div>
@@ -388,7 +393,7 @@
         </div>
         <div class="new-post">
             <img class="image-5" src="{% static 'create.webp' %}">
-            <span style="padding-left:10px ;font-size:20px;padding-top: 20px;">create a new post</span>
+            <span style="padding-left:10px ;font-size:20px;padding-top: 20px;"><a style="text-decoration: none"   href="/project/project-3">create a new post</a></span>
         </div>
 
     </div>

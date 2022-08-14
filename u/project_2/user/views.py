@@ -11,16 +11,16 @@ def register(request):
 
      user=authenticate(request,username=username,password=password)
 
-     if user is not None:
+     if user != None:
       login(request,user)
       messages.success(request,"valid cerendtials")
-      return redirect('/project/project-3')
+      return redirect('mainpage')
         
      
 
      else:
       messages.error(request,"bad cerendtials")
-      return redirect('/project/project-3')
+      return redirect('/')
 
    return render (request,'project-2.html')
     

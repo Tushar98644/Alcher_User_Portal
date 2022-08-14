@@ -14,14 +14,14 @@ def signup(request):
        username=request.POST['username']
        password=request.POST['password'] 
         
-       myuser=User.objects.create_user(username,password)
-
+       myuser=User.objects.create_user(username = username)
+       myuser.set_password(password)
        myuser.save()
        
        messages.success(request,("your account has been successfully created"))
         
 
-      
+       
        return redirect('/')
 
     

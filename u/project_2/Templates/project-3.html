@@ -10,8 +10,8 @@
         .log {
             background: linear-gradient(#e66465, #9198e5);
             ;
-
-
+            
+            
             width: 310px;
             padding-left: 20px;
             border-top-left-radius: 10px;
@@ -199,7 +199,7 @@
         </div>
         <div class="alcher">
 
-
+            
             <span class="alcheringa">Alcheringa</span> <span style="color: rgb(255, 89, 0);">Connect</span>
         </div>
         <div class="post" style="font-size: 20px;width: 320px; padding-left: 50px;font-size: 30px;">
@@ -213,8 +213,8 @@
             <div class="upload" style="margin-left: 45px;margin-top: 20px;padding-bottom: 20px;">
                 <div>
 
-                    <img id="30" src="" alt="" style=" width:300px;height:220px;overflow: hidden;margin-top: 0px;border-radius: 6px">
-
+                    <img id="30" src="" alt="" style=" width:300px;height:220px;overflow: hidden;margin-top: 0px;border-radius: 6px; display: none;">
+                    <div id="dummy-div" style="width:300px;height:220px"></div>
                 </div>
 
                 <div style="padding-top:140px;padding-left:80px;opacity: 0.4;margin-top: -100px;">
@@ -248,27 +248,32 @@
                 style="margin-top: 45px;margin-left:43px;width:300px;height:70px;border-color:rgb(227, 28, 28);border-radius: 10px;background-color: white;font-size: 20px;">click
                 to get loaction</button>
         </div>
-        <div>
+        <div style="padding-bottom:400px;">
             <button id="25" class="login-2" style="margin-top: 35px;color: orange;">share</button>
         </div>
 
     </div>
-    <div class="log" style="margin-left: 800px ;margin-top:-670px;padding-bottom: 60px;">
+    <div class="log" style="margin-left: 800px ;margin-top:-1150px;padding-bottom: 60px;">
         <div style="color: white;padding-top: 40px;font-size: 25px;">
-
+        
             MY PROFILE
 
         
         </div>
     </div>
     <div class="userlog">
-        <div style="font-size:20px;padding-top: 20px;padding-left: 40px;margin-left: 70px;opacity: 0.6;">
-            Evil destroyer
+        <div style="font-size:20px;padding-top: 30px;padding-left: 40px;margin-left: 70px;opacity: 0.6;margin-bottom: -10px;">
+          <div style="margin-bottom: -25px;">
+            {{user.username}}
+          </div> 
         </div>
-        <div style="margin-left: 110px;font-size: 20px;">
-            Tushar
+        <div >
+            <img style="width: 20px;margin-left: 90px;margin-bottom: -35px;" src="https://www.pngkey.com/png/detail/417-4174990_how-to-set-use-small-green-dot-icon.png">
         </div>
-        <div style="margin-top: -50px;margin-left: 20px;">
+        <div style="margin-left: 110px;font-size: 20px;margin-top: 10px;opacity: 0.4;">
+           Active
+        </div>
+        <div style="margin-top: -60px;margin-left: 20px;">
             <img class="image-2" src="{% static 'Screenshot 2022-08-06 at 10.55.48 AM.png' %}">
         </div>
         <div style="margin-left:18px;margin-top: 60px;width: 310px;">
@@ -276,18 +281,30 @@
             sed maximus rhoncus
         </div>
         <div style="margin-top: 70px;padding-left:90px;opacity: 0.6;font-size: 20px;">
-            <img class="image-4" src="{% static 'create.webp' %}"><a href="/project"> My posts</a>
+            <img class="image-4" src="{% static 'create.webp' %}"><a  style="text-decoration: none"  href="/project"> My posts</a>
                
            
 
         </div>
         <div style="margin-top: 15px;padding-left:90px;opacity: 0.6;font-size: 20px;">
-            <img class="image-3" src="{% static 'save.webp' %}"><a href="webops2">saved posts</a> 
+            <img class="image-3" src="{% static 'save.webp' %}"><a  style="text-decoration: none"  href="webops2">saved posts</a> 
         </div>
     </div>
     <div class="new-post">
         <img class="image-5" src="{% static 'create.webp' %}">
         <span style="padding-left:10px ;font-size:20px;padding-top: 20px;">create a new post</span>
+    </div>
+    <div style="margin-top:-240px ;">
+        <button style="margin-left:800px; width: 335px;
+        height: 50px;
+        margin-top: 60px;
+        border-radius: 10px;
+        font-size: 20px;
+        text-align: center;
+        border-color: orange;
+        background-color: white; ">
+           <a  style="text-decoration: none" href="/">Signout</a> 
+        </button>
     </div>
     <!-- <script src="{% static 'project2.js' %}"></script> -->
     <script>
@@ -315,7 +332,7 @@ function onsuccess(position) {
         return res.json();
     })
     .then(data => {
-       display.innerHTML=`${data.address.state},${data.address.county}, ${data.address.postcode} `;
+       display.innerHTML=`${data.address.county},${data.address.state}, ${data.address.postcode} `;
     })
 
     
@@ -327,7 +344,7 @@ function onsuccess(position) {
 
 function onerror(error) {
     if (error.code == 1) {
-        display.innertext = "you denies the request";
+        display.innertext = "you denied the request";
 
     }
     else if (error.code == 2) {
@@ -349,6 +366,7 @@ function onerror(error) {
         const divimage = document.getElementById("super");
         const img = document.getElementById("30");
         const hide=document.getElementById("31");
+        const dummy_div=document.getElementById("dummy-div");
         
         function active() {
             divimage.click();
@@ -367,6 +385,8 @@ function onerror(error) {
                 const reader = new FileReader();
                 reader.onload = function () {
                     const result = reader.result;
+                    img.style.display = "block";
+                    dummy_div.style.display = "none";
                     img.src = result;
                 }
                 reader.readAsDataURL(file);
